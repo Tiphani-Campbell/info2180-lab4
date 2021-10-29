@@ -77,7 +77,7 @@ if($_SERVER['REQUEST_METHOD'] === 'GET'){
         }
 
         if($flag === false){
-            echo "<h4> SUPERHERO NOT FOUND</h4>";
+            echo "<h5> SUPERHERO NOT FOUND</h4>";
         }
     }else {
         echo "<ul>";

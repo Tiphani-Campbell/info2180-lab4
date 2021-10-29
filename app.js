@@ -7,7 +7,8 @@ window.onload = () => {
 
         httpRequest=new XMLHttpRequest();
         
-        var url = "superheroes.php";
+        var input = document.getElementById("txt").value;
+        var url = "superheroes.php" + "?query=" + input;
         httpRequest.onreadystatechange = loadSuperhero;
         httpRequest.open('GET', url);
         httpRequest.send();
@@ -18,7 +19,9 @@ window.onload = () => {
         if(httpRequest.readyState === XMLHttpRequest.DONE){
             if(httpRequest.status === 200){
                 var response = httpRequest.responseText;
-                alert(response);
+                var result = document.getElementById("result");
+                result.setAttribute("id","result");
+                result.innerHTML=response;
             }else{
                 alert('There was a problem with the request.');
             }
